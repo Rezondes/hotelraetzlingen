@@ -1,15 +1,28 @@
-node_modules
-dist
+
+node_modules/
+dist/
 *.tsbuildinfo
-.swarm
-# lokale Tool- und Editor-Einstellungen
-.claude
-.vscode
-.idea
+
+# Logs
+*.log
+npm-debug.log*
+
+# Lokale Umgebungsvariablen
+.env
+.env.*
+
+# Lokale Tool- und Editor-Einstellungen
+.claude/
+.claude-flow/
+.swarm/
+ruvector.db*
+.vscode/
+.idea/
+
+# Betriebssystem
 .DS_Store
 Thumbs.db
-*.log
-# Originaldateien der alten Seite (Frameset) (nur lokal als Sicherung)
-_orig
-.claude-flow
-ruvector.db
+desktop.ini
+
+# Sicherung der alten Seite (HTML + Originalbilder), nur lokal
+_orig/
