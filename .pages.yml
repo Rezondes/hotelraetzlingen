@@ -1,0 +1,147 @@
+# Konfiguration für Pages CMS (https://pagescms.org): Web-Oberfläche zum Bearbeiten der Inhalte.
+media:
+  input: public/bilder
+  output: /bilder
+
+content:
+  - name: willkommen
+    label: "Willkommen (Startbereich)"
+    type: file
+    path: content/seiten/willkommen.md
+    fields:
+      - { name: titel, label: "Name", type: string, required: true }
+      - { name: untertitel, label: "Untertitel", type: string }
+      - { name: beschreibung, label: "Kurzbeschreibung (für Google)", type: text }
+      - name: bilder
+        label: "Fotos (die ersten drei als Collage, das erste im Hochformat)"
+        type: object
+        list: true
+        fields:
+          - { name: bild, label: "Foto", type: image, required: true }
+          - { name: alt, label: "Was ist auf dem Foto zu sehen?", type: string, required: true }
+      - { name: body, label: "Text (jede Überschrift 2 wird eine Karte)", type: rich-text }
+
+  - name: hotel
+    label: "Hotel"
+    type: file
+    path: content/seiten/hotel.md
+    fields: &abschnitt
+      - { name: titel, label: "Überschrift", type: string, required: true }
+      - name: bilder
+        label: "Fotos"
+        type: object
+        list: true
+        fields:
+          - { name: bild, label: "Foto", type: image, required: true }
+          - { name: alt, label: "Was ist auf dem Foto zu sehen?", type: string, required: true }
+      - { name: body, label: "Text (jede Überschrift 2 wird eine Karte)", type: rich-text }
+
+  - name: gaststaette
+    label: "Gaststätte"
+    type: file
+    path: content/seiten/gaststaette.md
+    fields: *abschnitt
+
+  - name: eiscafe
+    label: "Eiscafé"
+    type: file
+    path: content/seiten/eiscafe.md
+    fields: *abschnitt
+
+  - name: bowling
+    label: "Bowlingbahn"
+    type: file
+    path: content/seiten/bowling.md
+    fields: *abschnitt
+
+  - name: billard
+    label: "Billardzimmer"
+    type: file
+    path: content/seiten/billard.md
+    fields: *abschnitt
+
+  - name: preise
+    label: "Preise"
+    type: file
+    path: content/preise.json
+    format: json
+    fields:
+      - name: hotel
+        label: "Zimmerpreise"
+        type: object
+        list: true
+        fields: &preis
+          - { name: titel, label: "Name", type: string, required: true }
+          - { name: preis, label: "Preis (z. B. 50,00 €)", type: string, required: true }
+          - { name: zusatz, label: "Zusatz (z. B. pro Zimmer und Nacht)", type: string }
+      - name: bowling
+        label: "Bowlingpreise"
+        type: object
+        list: true
+        fields: *preis
+
+  - name: oeffnungszeiten
+    label: "Öffnungszeiten"
+    type: file
+    path: content/oeffnungszeiten.json
+    format: json
+    list: true
+    fields:
+      - { name: titel, label: "Bereich (z. B. Gaststätte)", type: string, required: true }
+      - name: zeilen
+        label: "Zeiten"
+        type: object
+        list: true
+        fields:
+          - { name: tage, label: "Tage", type: string, required: true }
+          - { name: zeit, label: "Uhrzeit", type: string, required: true }
+
+  - name: anreise
+    label: "Anreise"
+    type: file
+    path: content/seiten/anreise.md
+    fields:
+      - { name: titel, label: "Überschrift", type: string, required: true }
+      - { name: body, label: "Routen (jede Überschrift 2 wird eine Karte)", type: rich-text }
+
+  - name: kontakt
+    label: "Kontakt"
+    type: file
+    path: content/seiten/kontakt.md
+    fields:
+      - { name: titel, label: "Überschrift", type: string, required: true }
+      - { name: body, label: "Zusätzlicher Text (optional)", type: rich-text }
+
+  - name: betrieb
+    label: "Name, Adresse, Telefon, E-Mail"
+    type: file
+    path: content/betrieb.json
+    format: json
+    fields:
+      - { name: name, label: "Name", type: string, required: true }
+      - { name: art, label: "Art des Betriebs", type: string, required: true }
+      - { name: strasse, label: "Straße", type: string, required: true }
+      - { name: plz, label: "PLZ", type: string, required: true }
+      - { name: ort, label: "Ort", type: string, required: true }
+      - { name: telefon, label: "Telefon (mit Vorwahl, z. B. 039057 97063)", type: string, required: true }
+      - { name: email, label: "E-Mail", type: string, required: true }
+
+  - name: impressum
+    label: "Impressum"
+    type: file
+    path: content/seiten/impressum.md
+    fields: &rechtlich
+      - { name: titel, label: "Überschrift", type: string, required: true }
+      - { name: body, label: "Text", type: rich-text }
+
+  - name: datenschutz
+    label: "Datenschutzerklärung"
+    type: file
+    path: content/seiten/datenschutz.md
+    fields: *rechtlich
+
+  - name: cookies
+    label: "Cookie-Hinweis"
+    type: file
+    path: content/seiten/cookies.md
+    fields: *rechtlich

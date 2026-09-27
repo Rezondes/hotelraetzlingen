@@ -1,0 +1,15 @@
+node_modules
+dist
+*.tsbuildinfo
+.swarm
+# lokale Tool- und Editor-Einstellungen
+.claude
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+*.log
+# Originaldateien der alten Seite (Frameset) (nur lokal als Sicherung)
+_orig
+.claude-flow
+ruvector.db

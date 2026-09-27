@@ -1,0 +1,11 @@
+{
+  "hotel": [
+    { "titel": "Doppelzimmer", "preis": "50,00 €", "zusatz": "pro Zimmer und Nacht, inkl. Frühstück" },
+    { "titel": "Einzelzimmer", "preis": "30,00 €", "zusatz": "pro Zimmer und Nacht, inkl. Frühstück" }
+  ],
+  "bowling": [
+    { "titel": "60 Minuten Bowling vor 20 Uhr", "preis": "11,50 €", "zusatz": "pro Bowlingbahn" },
+    { "titel": "60 Minuten Bowling nach 20 Uhr", "preis": "12,50 €", "zusatz": "pro Bowlingbahn" },
+    { "titel": "Bowlingschuhe (auf Wunsch)", "preis": "1,50 €", "zusatz": "Leihgebühr" }
+  ]
+}

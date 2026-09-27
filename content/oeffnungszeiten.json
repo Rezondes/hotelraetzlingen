@@ -1,0 +1,15 @@
+[
+  {
+    "titel": "Gaststätte",
+    "zeilen": [
+      { "tage": "Dienstag bis Freitag", "zeit": "11 bis 14 Uhr und 17 bis 23 Uhr" },
+      { "tage": "Samstag und Sonntag", "zeit": "durchgehend 11 bis 23 Uhr" }
+    ]
+  },
+  {
+    "titel": "Eiscafé",
+    "zeilen": [
+      { "tage": "1. Mai bis 30. September", "zeit": "14 bis 18 Uhr" }
+    ]
+  }
+]
